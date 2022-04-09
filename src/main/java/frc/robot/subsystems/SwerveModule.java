@@ -28,6 +28,17 @@ public class SwerveModule extends SubsystemBase {
   private final boolean absoluteEncoderReversed;
   private final double absoluteEncoderOffsetRad;
   
+/**
+ * <p>Constructor method to create a SwerveModule object. </p>
+ * 
+ * @param driveMotorId - CAN ID of the drive motor
+ * @param turningMotorId - CAN ID of the turning motor
+ * @param driveMotorReversed - Whether or not the driving motor is reversed (True/False)
+ * @param turningMotorReversed - Whether or not the driving is reversed (True/False)
+ * @param absoluteEncoderId - CAN ID of the absolute encoder
+ * @param absoluteEncoderOffset - Offset found by manually alligning wheels and recording current angle
+ * @param absoluteEncoderReversed - Whether or not the abolsute encoder is reversed
+ */
   public SwerveModule(int driveMotorId, int turningMotorId, boolean driveMotorReversed, boolean turningMotorReversed,
          int absoluteEncoderId, double absoluteEncoderOffset, boolean absoluteEncoderReversed) {
 

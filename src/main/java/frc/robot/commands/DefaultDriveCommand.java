@@ -22,7 +22,16 @@ public class DefaultDriveCommand extends CommandBase {
   private final BooleanSupplier fieldOrientedFunction;
   private final SlewRateLimiter xLimiter, yLimiter, turningLimiter;
 
-
+/**
+ * <p> This is the Default Drive Command for teleop. it takes in the x, y, and z axis values and
+ * turns it into a chassisSpeed to control the robot. </p>
+ * 
+ * @param Subsystem - The Swervedrive DrivetrainSubsystem
+ * @param xSpdFunction - X Axis Value
+ * @param ySpdFunction - Y Axis Value
+ * @param turningSpdFunction - Z Axis Value (Rotational)
+ * @param fieldOrientedFunction - Whether or not fieldOriented is enabled or not (true/false)
+ */
   public DefaultDriveCommand(SwerveSubsystem swerveSubsystem, DoubleSupplier xSpdFunction, 
           DoubleSupplier ySpdFunction, DoubleSupplier turningSpdFunction,
           BooleanSupplier fieldOrientedFunction) {
