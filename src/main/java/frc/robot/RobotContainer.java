@@ -26,7 +26,21 @@ public class RobotContainer {
     configureButtonBindings();
   }
 
-
+ /**
+   * Sets the NEO motors of the left side of the robot to the specified speed
+   * 
+   * <p>
+   * To drive the left side foward, input a positive speed. For example,
+   * {@code moveLeftSide(0.5);}
+   * </p>
+   * <p>
+   * To drive the left side backward, input a negative speed. For example,
+   * {@code moveLeftSide(-0.5);}
+   * </p>
+   * 
+   * @param speed - the speed to set the motors to. Value should be between -1.0 and 1.0
+   * 
+   */
   private void configureButtonBindings() {
     new JoystickButton(driverJoystick, 2).whenPressed(() -> swerveSubsystem.zeroHeading());
   }
