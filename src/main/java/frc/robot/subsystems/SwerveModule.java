@@ -65,30 +65,57 @@ public class SwerveModule extends SubsystemBase {
 
       resetEncoders();
   }
-
+//Functions to return various values - Hover over each fun\
+ /**
+ * Get the position of the motor. This returns the native units of 'rotations' by default, and can be changed by a scale factor using setPositionConversionFactor().
+ *
+ *@return Returns number of rotations of the motor
+ * 
+ */
   public double getDrivePosition() {
     return driveEncoder.getPosition();
   }
-
+ /**
+ * Get the position of the motor. This returns the native units of 'rotations' by default, and can be changed by a scale factor using setPositionConversionFactor().
+ *
+ *@return Returns number of rotations of the motor
+ * 
+ */
   public double getTurningPosition() {
     return turningEncoder.getPosition();
   }
-
+ /**
+ * Get the velocity of the motor. This returns the native units of 'RPM' by default, and can be changed by a scale factor using setVelocityConversionFactor().
+ *
+ *@return Number the RPM of the motor
+ * 
+ */
   public double getDriveVelocity() {
     return driveEncoder.getVelocity();
   }
-
+/**
+ * Get the velocity of the motor. This returns the native units of 'RPM' by default, and can be changed by a scale factor using setVelocityConversionFactor().
+ *
+ *@return Number the RPM of the motor
+ * 
+ */
   public double getTurningVelocity() {
     return turningEncoder.getVelocity();
   }
-
+/**
+ * Does a bunch of math to find the Angle from the Absolute Encoders
+ * 
+ * @return Returns Absolute Encoder's angle
+ */
   public double getAbsoluteEncoderRad() {
     double angle = absoluteEncoder.getBusVoltage() / RobotController.getVoltage5V();
     angle *= 2.0 * Math.PI;
     angle -= absoluteEncoderOffsetRad;
     return angle * (absoluteEncoderReversed ? -1.0 : 1.0);
   }
-
+/**
+ * Set drive motor encoders to 0 and set the turning encoders to the value of the Absolute Encoder
+ */
   public void resetEncoders() {
     driveEncoder.setPosition(0);
     turningEncoder.setPosition(getAbsoluteEncoderRad());
